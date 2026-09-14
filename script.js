@@ -65,6 +65,95 @@ const saveButton =
 const EXPORT_SIZE = 1000;
 
 
+/*
+    미리보기 크기 조절
+
+    실제 paper는 항상 1000 × 1000 기준으로 유지하고,
+    화면에서는 paper-frame의 폭에 맞춰
+    전체를 같은 비율로 축소해서 보여줍니다.
+
+    따라서 PC와 모바일에서
+    여백, 글자 크기, 요소 위치의 비율이
+    동일하게 유지됩니다.
+*/
+
+const paperFrame =
+    document.querySelector('.paper-frame');
+
+
+function updatePaperScale() {
+
+    if (!paperFrame) {
+        return;
+    }
+
+
+    const frameWidth =
+        paperFrame.clientWidth;
+
+
+    if (!frameWidth) {
+        return;
+    }
+
+
+    const scale =
+        Math.min(
+            frameWidth / EXPORT_SIZE,
+            1
+        );
+
+
+    paper.style.setProperty(
+        '--paper-scale',
+        scale
+    );
+
+}
+
+
+/*
+    화면 크기가 바뀌었을 때
+    미리보기 비율을 다시 계산합니다.
+*/
+
+window.addEventListener(
+    'resize',
+    updatePaperScale
+);
+
+
+/*
+    preview 영역 자체의 크기가 바뀌는 경우에도
+    다시 계산합니다.
+*/
+
+if (
+    typeof ResizeObserver !==
+    'undefined' &&
+    paperFrame
+) {
+
+    const paperResizeObserver =
+        new ResizeObserver(
+            updatePaperScale
+        );
+
+
+    paperResizeObserver.observe(
+        paperFrame
+    );
+
+}
+
+
+/*
+    초기 미리보기 크기 계산
+*/
+
+updatePaperScale();
+
+
 /* 기본 설정 */
 
 const defaultState = {
@@ -1207,6 +1296,23 @@ saveButton.addEventListener(
 
             capturePaper =
                 paper.cloneNode(true);
+
+
+            /*
+                화면에서 미리보기를 축소하기 위해
+                적용된 transform을 저장할 때는 제거합니다.
+
+                저장본은 항상 1000 × 1000
+                원래 크기로 렌더링되어야 합니다.
+            */
+
+            capturePaper.style.setProperty(
+                '--paper-scale',
+                '1'
+            );
+
+            capturePaper.style.transform =
+                'none';
 
 
             /*

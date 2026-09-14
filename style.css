@@ -1,18 +1,27 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
+
 * {
+
     box-sizing: border-box;
+
 }
+
 
 html,
 body {
+
     margin: 0;
     padding: 0;
+
 }
 
+
 body {
+
     background: #f4f4f6;
     color: #333333;
+
     font-family:
         'Pretendard',
         -apple-system,
@@ -21,82 +30,127 @@ body {
         'Apple SD Gothic Neo',
         'Malgun Gothic',
         sans-serif;
+
 }
+
 
 button,
 input,
 textarea {
+
     font: inherit;
+
 }
+
 
 button {
+
     cursor: pointer;
+
 }
 
+
 .page {
+
     width: 100%;
     max-width: 1500px;
+
     margin: 0 auto;
+
     padding: 50px 35px 80px;
+
 }
 
 
 /* 상단 */
 
 .site-header {
+
     margin-bottom: 40px;
+
 }
+
 
 .site-header h1 {
+
     margin: 0 0 8px;
+
     font-size: 28px;
     font-weight: 700;
+
 }
 
+
 .site-header p {
+
     margin: 0;
+
     color: #888888;
+
     font-size: 14px;
+
 }
 
 
 /* 전체 편집 영역 */
 
 .editor-layout {
+
     display: grid;
+
     grid-template-columns:
         minmax(430px, 520px)
         minmax(400px, 1fr);
+
     gap: 45px;
+
     align-items: start;
+
 }
 
 
 /* 왼쪽 설정 패널 */
 
 .control-panel {
+
     background: #ffffff;
+
     border: 1px solid #e3e3e6;
     border-radius: 14px;
+
     padding: 28px;
+
 }
+
 
 .control-section {
+
     padding: 0 0 25px;
+
     margin-bottom: 25px;
+
     border-bottom: 1px solid #eeeeef;
+
 }
+
 
 .control-section:last-child {
+
     margin-bottom: 0;
     padding-bottom: 0;
+
     border-bottom: 0;
+
 }
 
+
 .control-section h2 {
+
     margin: 0 0 14px;
+
     font-size: 15px;
     font-weight: 700;
+
 }
 
 
@@ -104,376 +158,651 @@ button {
 
 .control-section > textarea,
 .control-section > input[type="text"] {
+
     display: block;
+
     width: 100%;
+
     padding: 11px 12px;
+
     border: 1px solid #dddddf;
     border-radius: 7px;
+
     background: #fafafa;
+
     outline: none;
+
     color: #333333;
+
     font-size: 13px;
+
 }
 
+
 .control-section > textarea {
+
     min-height: 90px;
+
     resize: vertical;
+
     line-height: 1.6;
+
 }
+
 
 .control-section > textarea:focus,
 .control-section > input[type="text"]:focus {
+
     border-color: #aaaaae;
+
     background: #ffffff;
+
 }
 
 
 /* 설정 행 */
 
 .control-row {
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
     margin-top: 13px;
+
 }
 
+
 .control-label {
+
     flex: 0 0 65px;
+
     color: #777777;
+
     font-size: 12px;
+
 }
 
 
 /* 버튼 그룹 */
 
 .button-group {
+
     display: flex;
+
     gap: 5px;
+
     flex-wrap: wrap;
+
 }
+
 
 .font-button,
 .align-button,
 .line-button {
+
     padding: 6px 11px;
+
     border: 1px solid #dddddf;
     border-radius: 6px;
+
     background: #ffffff;
+
     color: #666666;
+
     font-size: 12px;
+
     transition:
         background 0.15s ease,
         border-color 0.15s ease,
         color 0.15s ease;
+
 }
+
 
 .font-button:hover,
 .align-button:hover,
 .line-button:hover {
+
     border-color: #bbbbbf;
+
 }
+
 
 .font-button.active,
 .align-button.active,
 .line-button.active {
+
     border-color: #333333;
+
     background: #333333;
+
     color: #ffffff;
+
 }
 
 
 /* 크기 조절 */
 
 .range-wrap {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     flex: 1;
+
 }
+
 
 .range-wrap input[type="range"] {
+
     flex: 1;
+
     min-width: 0;
+
 }
 
+
 .range-wrap span {
+
     width: 42px;
+
     color: #666666;
+
     font-size: 12px;
+
     text-align: right;
+
 }
 
 
 /* 색상 */
 
 .color-buttons {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     flex-wrap: wrap;
+
 }
+
 
 .color-button,
 .text-color-button {
+
     width: 28px;
     height: 28px;
+
     padding: 0;
+
     border: 1px solid #cccccc;
     border-radius: 50%;
+
 }
 
+
 .color-buttons input[type="color"] {
+
     width: 30px;
     height: 30px;
+
     padding: 0;
+
     border: 1px solid #cccccc;
     border-radius: 50%;
+
     background: #ffffff;
+
     cursor: pointer;
+
 }
 
 
 /* 배경 이미지 */
 
 .background-image-control {
+
     display: flex;
+
     align-items: center;
+
     gap: 7px;
+
     margin-top: 15px;
+
     flex-wrap: wrap;
+
 }
+
 
 .background-image-button,
 .remove-background-button {
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     min-height: 32px;
+
     padding: 7px 11px;
+
     border: 1px solid #dddddf;
     border-radius: 6px;
+
     background: #ffffff;
+
     color: #555555;
+
     font-size: 12px;
+
     cursor: pointer;
+
 }
+
 
 .background-image-button:hover,
 .remove-background-button:hover {
+
     border-color: #bbbbbf;
+
 }
+
 
 #backgroundImageInput {
+
     display: none;
+
 }
 
+
 .background-image-notice {
+
     margin: 8px 0 0;
+
     color: #999999;
+
     font-size: 11px;
+
     line-height: 1.5;
+
 }
 
 
 /* 어두운 배경 체크 */
 
 .check-row {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     margin-top: 15px;
+
     color: #555555;
+
     font-size: 13px;
+
     cursor: pointer;
+
 }
 
+
 .check-row input {
+
     margin: 0;
+
 }
 
 
 /* 오른쪽 미리보기 */
 
 .preview-area {
+
     min-width: 0;
+
 }
+
 
 .preview-label {
+
     margin-bottom: 14px;
+
     font-size: 15px;
+
     font-weight: 700;
+
 }
 
+
 .preview-sticky {
+
     position: sticky;
+
     top: 30px;
+
+}
+
+
+/*
+    미리보기 프레임
+
+    실제 디자인 기준은 항상
+    1000 × 1000px입니다.
+
+    화면 폭이 작아지면
+    paper 전체가 같은 비율로
+    축소되어 표시됩니다.
+*/
+
+.paper-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
 }
 
 
 /* 정사각형 결과물 */
 
 .paper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 1000px;
+    height: 1000px;
+
+    aspect-ratio: auto;
+
+    transform:
+        scale(var(--paper-scale, 1));
+
+    transform-origin: top left;
+
     overflow: hidden;
+
     border: 1px solid #dddddf;
+
     background-color: #ffffff;
+
     color: #333333;
+
 }
 
 
 /* 배경 이미지 */
 
 .background-image-layer {
+
     position: absolute;
+
     inset: 0;
+
     z-index: 0;
+
     display: none;
+
     background-position: center;
+
     background-size: cover;
+
     background-repeat: no-repeat;
+
     pointer-events: none;
+
 }
 
+
 .paper.has-background-image .background-image-layer {
+
     display: block;
+
 }
 
 
 /* 어두운 배경 */
 
 .dark-overlay {
+
     position: absolute;
+
     inset: 0;
+
     z-index: 1;
+
     background: rgba(0, 0, 0, 0.5);
+
     opacity: 0;
+
     pointer-events: none;
+
 }
 
+
 .paper.dark .dark-overlay {
+
     opacity: 1;
+
 }
 
 
 /* 본문 / 제목 / 작가 영역 */
 
 .paper-inner {
+
     position: relative;
+
     z-index: 2;
+
     display: flex;
+
     flex-direction: column;
+
     width: 100%;
     height: 100%;
+
     padding: 80px;
+
 }
 
 
 /* 본문 + 제목 + 작가 */
 
 .main-text-group {
+
     width: 100%;
+
     margin-top: auto;
     margin-bottom: auto;
+
 }
 
 
 /* 본문 */
 
 .text-input {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
     min-height: 0;
+
     margin: 0;
+
     padding: 8px 0;
+
     border: 0;
+
     outline: none;
+
     background: transparent;
+
     resize: none;
+
     overflow: hidden;
+
     box-sizing: border-box;
+
     white-space: pre-wrap;
+
     overflow-wrap: anywhere;
+
     word-break: break-all;
+
     color: inherit;
+
     font-size: 35px;
+
     line-height: 1.8;
+
     font-weight: 600;
+
 }
 
 
 /* 제목 */
 
 .title-input {
+
     display: block;
+
     width: 100%;
+
     height: 45px;
+
     margin-top: 15px;
+
     padding: 5px 0;
+
     border: 0;
+
     outline: none;
+
     background: transparent;
+
     box-sizing: border-box;
+
     overflow: visible;
+
     color: inherit;
+
     font-size: 40px;
+
     line-height: 1.35;
+
     font-weight: 400;
+
 }
 
 
 /* 작가 */
 
 .author-input {
+
     display: block;
+
     width: 100%;
+
     height: 45px;
+
     margin-top: 15px;
+
     padding: 2px 0;
+
     border: 0;
+
     outline: none;
+
     background: transparent;
+
     box-sizing: border-box;
+
     color: inherit;
+
     font-size: 40px;
+
     line-height: 1.4;
+
     font-weight: 300;
+
 }
 
 
 /* 독립된 하단 영역 */
 
 .footer-area {
+
     position: absolute;
+
     left: 80px;
     right: 80px;
+
     bottom: 50px;
+
     z-index: 2;
+
     box-sizing: border-box;
+
 }
 
+
 .footer-input {
+
     display: block;
+
     width: 100%;
+
     /* height: 25px; */
+
     margin: 0;
+
     padding: 2px 0;
+
     border: 0;
+
     outline: none;
+
     background: transparent;
+
     box-sizing: border-box;
+
     color: inherit;
+
     font-size: 25px;
+
     line-height: 1.4;
+
     font-weight: 300;
+
 }
 
 
 /* 글꼴 */
 
 .font-gothic {
+
     font-family:
         'Pretendard',
         -apple-system,
@@ -482,135 +811,216 @@ button {
         'Apple SD Gothic Neo',
         'Malgun Gothic',
         sans-serif;
+
 }
 
+
 .font-batang {
+
     font-family:
         'Batang',
         '바탕',
         'BatangChe',
         '바탕체',
         serif;
+
 }
 
+
 .font-myeongjo {
+
     font-family:
         'Noto Serif KR',
         'Nanum Myeongjo',
         '명조',
         '바탕',
         serif;
+
 }
 
 
 /* 정렬 */
 
 .align-left {
+
     text-align: left;
+
 }
+
 
 .align-center {
+
     text-align: center;
+
 }
 
+
 .align-right {
+
     text-align: right;
+
 }
 
 
 /* 줄 간격 */
 
 .line-height-1-5 .text-input {
+
     line-height: 1.5;
+
 }
+
 
 .line-height-1-8 .text-input {
+
     line-height: 1.8;
+
 }
 
+
 .line-height-2-1 .text-input {
+
     line-height: 2.1;
+
 }
 
 
 /* 아래 버튼 */
 
 .bottom-buttons {
+
     display: flex;
+
     gap: 8px;
+
     margin-top: 15px;
+
 }
+
 
 .bottom-buttons button {
+
     flex: 1;
+
     height: 45px;
+
     border-radius: 7px;
+
     font-size: 13px;
+
 }
+
 
 .reset-button {
+
     border: 1px solid #dddddf;
+
     background: #ffffff;
+
     color: #555555;
+
 }
+
 
 .save-button {
+
     border: 1px solid #333333;
+
     background: #333333;
+
     color: #ffffff;
+
 }
 
+
 .bottom-buttons button:disabled {
+
     cursor: default;
+
     opacity: 0.6;
+
 }
 
 
 /* 안내 */
 
 .notice {
+
     margin: 10px 0 0;
+
     color: #999999;
+
     font-size: 11px;
+
     line-height: 1.5;
+
     text-align: center;
+
 }
 
 
 /* 이미지 저장용 텍스트 */
 
 .capture-text {
+
     box-sizing: border-box;
+
     background: transparent;
+
     white-space: pre-wrap;
+
     overflow-wrap: anywhere;
+
     word-break: break-all;
+
 }
+
 
 .capture-text.body {
+
     width: 100%;
+
     padding: 8px 0;
+
 }
+
 
 .capture-text.title {
+
     width: 100%;
+
     height: 42px;
+
     margin-top: 15px;
+
     padding: 5px 0;
+
 }
+
 
 .capture-text.author {
+
     width: 100%;
+
     height: 25px;
+
     margin-top: 15px;
+
     padding: 2px 0;
+
 }
 
+
 .capture-text.footer {
+
     width: 100%;
+
     height: 25px;
+
     margin: 0;
+
     padding: 2px 0;
+
 }
 
 
@@ -619,12 +1029,18 @@ button {
 @media (max-width: 900px) {
 
     .editor-layout {
+
         grid-template-columns: 1fr;
+
         gap: 35px;
+
     }
 
+
     .preview-sticky {
+
         position: static;
+
     }
 
 }
@@ -633,21 +1049,16 @@ button {
 @media (max-width: 700px) {
 
     .page {
+
         padding: 30px 20px 60px;
+
     }
+
 
     .control-panel {
+
         padding: 20px;
-    }
 
-    .paper-inner {
-        padding: 35px;
-    }
-
-    .footer-area {
-        left: 80px;
-        right: 80px;
-        bottom: 50px;
     }
 
 }

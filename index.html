@@ -711,65 +711,69 @@
 
             <div class="preview-sticky">
 
-                <div
-                    id="paper"
-                    class="paper line-height-1-8"
-                    style="
-                        background-color:#ffffff;
-                        color:#000000;
-                    "
-                >
+                <div class="paper-frame">
 
-                    <!-- 배경 이미지 -->
-                    <div class="background-image-layer"></div>
+                    <div
+                        id="paper"
+                        class="paper line-height-1-8"
+                        style="
+                            background-color:#ffffff;
+                            color:#000000;
+                        "
+                    >
 
-                    <!-- 어두운 배경 -->
-                    <div class="dark-overlay"></div>
+                        <!-- 배경 이미지 -->
+                        <div class="background-image-layer"></div>
+
+                        <!-- 어두운 배경 -->
+                        <div class="dark-overlay"></div>
 
 
-                    <div class="paper-inner">
+                        <div class="paper-inner">
 
-                        <div class="main-text-group">
+                            <div class="main-text-group">
 
-                            <textarea
-                                id="textInput"
-                                class="text-input font-gothic align-left"
-                                placeholder="본문을 입력하세요."
-                                maxlength="5000"
-                            ></textarea>
+                                <textarea
+                                    id="textInput"
+                                    class="text-input font-gothic align-left"
+                                    placeholder="본문을 입력하세요."
+                                    maxlength="5000"
+                                ></textarea>
 
+
+                                <input
+                                    id="titleInput"
+                                    class="title-input font-gothic align-left"
+                                    type="text"
+                                    placeholder="제목"
+                                    maxlength="100"
+                                >
+
+
+                                <input
+                                    id="authorInput"
+                                    class="author-input font-gothic align-left"
+                                    type="text"
+                                    placeholder="작가"
+                                    maxlength="100"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="footer-area">
 
                             <input
-                                id="titleInput"
-                                class="title-input font-gothic align-left"
+                                id="footerInput"
+                                class="footer-input font-gothic align-center"
                                 type="text"
-                                placeholder="제목"
-                                maxlength="100"
-                            >
-
-
-                            <input
-                                id="authorInput"
-                                class="author-input font-gothic align-left"
-                                type="text"
-                                placeholder="작가"
+                                placeholder="하단 텍스트"
                                 maxlength="100"
                             >
 
                         </div>
-
-                    </div>
-
-
-                    <div class="footer-area">
-
-                        <input
-                            id="footerInput"
-                            class="footer-input font-gothic align-center"
-                            type="text"
-                            placeholder="하단 텍스트"
-                            maxlength="100"
-                        >
 
                     </div>
 
