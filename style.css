@@ -397,7 +397,7 @@ button {
     color: inherit;
     font-size: 40px;
     line-height: 1.35;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* 작가 */
@@ -414,7 +414,7 @@ button {
     color: inherit;
     font-size: 40px;
     line-height: 1.4;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 /* 독립된 하단 영역 */
@@ -440,7 +440,7 @@ button {
     color: inherit;
     font-size: 25px;
     line-height: 1.4;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 /* 글꼴 */
