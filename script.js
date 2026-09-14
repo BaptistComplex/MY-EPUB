@@ -1569,7 +1569,7 @@ capturePaper.style.aspectRatio = 'auto';
                     capturePaper,
                     {
 
-                        scale: 2,
+                        scale: 1,
 
                         useCORS: true,
 
