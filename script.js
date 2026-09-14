@@ -1306,50 +1306,17 @@ saveButton.addEventListener(
                 원래 크기로 렌더링되어야 합니다.
             */
 
-            capturePaper.style.setProperty(
-                '--paper-scale',
-                '1'
-            );
+            capturePaper.style.setProperty('--paper-scale', '1');
+capturePaper.style.transform = 'none';
 
-            capturePaper.style.transform =
-                'none';
+capturePaper.style.border = 'none';
 
-
-            /*
-                화면 밖에 배치
-            */
-
-            capturePaper.style.position =
-                'fixed';
-
-            capturePaper.style.left =
-                '-100000px';
-
-            capturePaper.style.top =
-                '0';
-
-
-            /*
-                저장용 크기를 고정합니다.
-
-                브라우저 창의 크기와
-                전혀 관계가 없습니다.
-            */
-
-            capturePaper.style.width =
-                `${EXPORT_SIZE}px`;
-
-            capturePaper.style.height =
-                `${EXPORT_SIZE}px`;
-
-
-            /*
-                aspect-ratio 때문에
-                크기가 다시 계산되지 않도록 합니다.
-            */
-
-            capturePaper.style.aspectRatio =
-                'auto';
+capturePaper.style.position = 'fixed';
+capturePaper.style.left = '-100000px';
+capturePaper.style.top = '0';
+capturePaper.style.width = `${EXPORT_SIZE}px`;
+capturePaper.style.height = `${EXPORT_SIZE}px`;
+capturePaper.style.aspectRatio = 'auto';
 
 
             document.body.appendChild(
@@ -1634,7 +1601,7 @@ saveButton.addEventListener(
 
 
             link.download =
-                'my-writing-image.png';
+                'my-epub-image.png';
 
 
             link.href =
