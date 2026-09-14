@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>이미지 공유기</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+    ></script>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header class="site-header">
+
+        <h1>
+            이미지 공유기
+        </h1>
+
+        <p>
+            리디북스 이펍 이미지 공유가 막혀서 만든 사이트
+        </p>
+
+    </header>
+
+
+    <div class="editor-layout">
+
+
+        <!-- 왼쪽 설정 패널 -->
+        <aside class="control-panel">
+
+
+            <!-- 본문 -->
+            <section class="control-section">
+
+                <h2>
+                    본문
+                </h2>
+
+                <textarea
+                    id="bodyTextControl"
+                    placeholder="본문을 입력하세요."
+                ></textarea>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        서체
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="font-button active"
+                            data-target="body"
+                            data-font="gothic"
+                        >
+                            고딕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="body"
+                            data-font="batang"
+                        >
+                            바탕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="body"
+                            data-font="myeongjo"
+                        >
+                            명조
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        글자 크기
+                    </span>
+
+                    <div class="range-wrap">
+
+                        <input
+                            type="range"
+                            id="bodySize"
+                            min="10"
+                            max="50"
+                            value="35"
+                        >
+
+                        <span id="bodySizeValue">
+                            35px
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        정렬
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="align-button active"
+                            data-target="body"
+                            data-align="left"
+                        >
+                            왼쪽
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="body"
+                            data-align="center"
+                        >
+                            가운데
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="body"
+                            data-align="right"
+                        >
+                            오른쪽
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        줄 간격
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="line-button"
+                            data-line="1.5"
+                        >
+                            좁게
+                        </button>
+
+                        <button
+                            type="button"
+                            class="line-button active"
+                            data-line="1.8"
+                        >
+                            보통
+                        </button>
+
+                        <button
+                            type="button"
+                            class="line-button"
+                            data-line="2.1"
+                        >
+                            넓게
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 제목 -->
+            <section class="control-section">
+
+                <h2>
+                    제목
+                </h2>
+
+                <input
+                    type="text"
+                    id="titleTextControl"
+                    placeholder="제목을 입력하세요."
+                >
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        서체
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="font-button active"
+                            data-target="title"
+                            data-font="gothic"
+                        >
+                            고딕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="title"
+                            data-font="batang"
+                        >
+                            바탕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="title"
+                            data-font="myeongjo"
+                        >
+                            명조
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        글자 크기
+                    </span>
+
+                    <div class="range-wrap">
+
+                        <input
+                            type="range"
+                            id="titleSize"
+                            min="10"
+                            max="50"
+                            value="40"
+                        >
+
+                        <span id="titleSizeValue">
+                            40px
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        정렬
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="align-button active"
+                            data-target="title"
+                            data-align="left"
+                        >
+                            왼쪽
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="title"
+                            data-align="center"
+                        >
+                            가운데
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="title"
+                            data-align="right"
+                        >
+                            오른쪽
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 작가 -->
+            <section class="control-section">
+
+                <h2>
+                    작가
+                </h2>
+
+                <input
+                    type="text"
+                    id="authorTextControl"
+                    placeholder="작가를 입력하세요."
+                >
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        서체
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="font-button active"
+                            data-target="author"
+                            data-font="gothic"
+                        >
+                            고딕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="author"
+                            data-font="batang"
+                        >
+                            바탕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="author"
+                            data-font="myeongjo"
+                        >
+                            명조
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        글자 크기
+                    </span>
+
+                    <div class="range-wrap">
+
+                        <input
+                            type="range"
+                            id="authorSize"
+                            min="10"
+                            max="50"
+                            value="40"
+                        >
+
+                        <span id="authorSizeValue">
+                            40px
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        정렬
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="align-button active"
+                            data-target="author"
+                            data-align="left"
+                        >
+                            왼쪽
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="author"
+                            data-align="center"
+                        >
+                            가운데
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="author"
+                            data-align="right"
+                        >
+                            오른쪽
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 하단 텍스트 -->
+            <section class="control-section">
+
+                <h2>
+                    하단 텍스트
+                </h2>
+
+                <input
+                    type="text"
+                    id="footerTextControl"
+                    placeholder="하단 텍스트를 입력하세요."
+                >
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        서체
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="font-button active"
+                            data-target="footer"
+                            data-font="gothic"
+                        >
+                            고딕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="footer"
+                            data-font="batang"
+                        >
+                            바탕
+                        </button>
+
+                        <button
+                            type="button"
+                            class="font-button"
+                            data-target="footer"
+                            data-font="myeongjo"
+                        >
+                            명조
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        글자 크기
+                    </span>
+
+                    <div class="range-wrap">
+
+                        <input
+                            type="range"
+                            id="footerSize"
+                            min="10"
+                            max="50"
+                            value="25"
+                        >
+
+                        <span id="footerSizeValue">
+                            25px
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-row">
+
+                    <span class="control-label">
+                        정렬
+                    </span>
+
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="footer"
+                            data-align="left"
+                        >
+                            왼쪽
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button active"
+                            data-target="footer"
+                            data-align="center"
+                        >
+                            가운데
+                        </button>
+
+                        <button
+                            type="button"
+                            class="align-button"
+                            data-target="footer"
+                            data-align="right"
+                        >
+                            오른쪽
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 배경 -->
+            <section class="control-section">
+
+                <h2>
+                    배경
+                </h2>
+
+
+                <div class="color-buttons">
+
+                    <button
+                        type="button"
+                        class="color-button"
+                        data-color="#ffffff"
+                        style="background:#ffffff;"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="color-button"
+                        data-color="#555555"
+                        style="background:#555555;"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="color-button"
+                        data-color="#000000"
+                        style="background:#000000;"
+                    ></button>
+
+
+                    <input
+                        type="color"
+                        id="backgroundColor"
+                        value="#ffffff"
+                        title="사용자 색상"
+                    >
+
+                </div>
+
+
+                <!-- 배경 이미지 -->
+                <div class="background-image-control">
+
+                    <label
+                        for="backgroundImageInput"
+                        class="background-image-button"
+                    >
+                        이미지 삽입
+                    </label>
+
+                    <input
+                        type="file"
+                        id="backgroundImageInput"
+                        accept="image/*"
+                    >
+
+                    <button
+                        type="button"
+                        id="removeBackgroundImage"
+                        class="remove-background-button"
+                    >
+                        이미지 제거
+                    </button>
+
+                </div>
+
+
+                <p class="background-image-notice">
+                    삽입한 이미지는 중앙을 기준으로 보여집니다.
+                </p>
+
+
+                <label class="check-row">
+
+                    <input
+                        type="checkbox"
+                        id="darkMode"
+                    >
+
+                    <span>
+                        어두운 배경
+                    </span>
+
+                </label>
+
+            </section>
+
+
+            <!-- 글자색 -->
+            <section class="control-section">
+
+                <h2>
+                    글자색
+                </h2>
+
+
+                <div class="color-buttons">
+
+                    <button
+                        type="button"
+                        class="text-color-button"
+                        data-color="#ffffff"
+                        style="background:#ffffff;"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="text-color-button"
+                        data-color="#555555"
+                        style="background:#555555;"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="text-color-button"
+                        data-color="#000000"
+                        style="background:#000000;"
+                    ></button>
+
+
+                    <input
+                        type="color"
+                        id="textColor"
+                        value="#000000"
+                        title="사용자 색상"
+                    >
+
+                </div>
+
+            </section>
+
+        </aside>
+
+
+        <!-- 미리보기 -->
+        <section class="preview-area">
+
+            <div class="preview-label">
+                미리보기
+            </div>
+
+
+            <div class="preview-sticky">
+
+                <div
+                    id="paper"
+                    class="paper line-height-1-8"
+                    style="
+                        background-color:#ffffff;
+                        color:#000000;
+                    "
+                >
+
+                    <!-- 배경 이미지 -->
+                    <div class="background-image-layer"></div>
+
+                    <!-- 어두운 배경 -->
+                    <div class="dark-overlay"></div>
+
+
+                    <div class="paper-inner">
+
+                        <div class="main-text-group">
+
+                            <textarea
+                                id="textInput"
+                                class="text-input font-gothic align-left"
+                                placeholder="본문을 입력하세요."
+                                maxlength="5000"
+                            ></textarea>
+
+
+                            <input
+                                id="titleInput"
+                                class="title-input font-gothic align-left"
+                                type="text"
+                                placeholder="제목"
+                                maxlength="100"
+                            >
+
+
+                            <input
+                                id="authorInput"
+                                class="author-input font-gothic align-left"
+                                type="text"
+                                placeholder="작가"
+                                maxlength="100"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="footer-area">
+
+                        <input
+                            id="footerInput"
+                            class="footer-input font-gothic align-center"
+                            type="text"
+                            placeholder="하단 텍스트"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="bottom-buttons">
+
+                    <button
+                        id="resetButton"
+                        class="reset-button"
+                    >
+                        초기화
+                    </button>
+
+                    <button
+                        id="saveButton"
+                        class="save-button"
+                    >
+                        저장
+                    </button>
+
+                </div>
+
+
+                <p class="notice">
+                    입력한 내용은 1000 × 1000px의 정사각형 PNG 이미지로 저장됩니다.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
