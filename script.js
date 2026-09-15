@@ -889,8 +889,10 @@ backgroundImageInput.addEventListener(
                 '이미지 파일만 업로드할 수 있습니다.'
             );
 
+
             backgroundImageInput.value =
                 '';
+
 
             return;
 
@@ -920,6 +922,7 @@ backgroundImageInput.addEventListener(
             alert(
                 '배경 이미지를 불러오지 못했습니다.'
             );
+
 
             backgroundImageInput.value =
                 '';
@@ -1509,7 +1512,7 @@ capturePaper.style.aspectRatio = 'auto';
 
 
             /*
-                기존 입력창을
+                기존 입력 요소를
                 저장용 텍스트로 교체
             */
 
@@ -1554,6 +1557,16 @@ capturePaper.style.aspectRatio = 'auto';
 
                 }
             );
+
+
+            /*
+                웹폰트가 완전히 로드된 뒤
+                이미지를 생성합니다.
+            */
+
+            if (document.fonts) {
+                await document.fonts.ready;
+            }
 
 
             /*
